@@ -1,3 +1,11 @@
+# Get xRooms, yRooms and Room size
+# Pick random room as spawn point
+# Connect to unconnected neighbour
+# Make that cell the current room
+# Rinse. Repeat for all neighbours
+# Within each room randomise interior.
+# add staircases and corrdors to connect between cells
+
 import random
 import itertools
 import sys
@@ -190,6 +198,8 @@ def genesis(sizeX, sizeY, roomSize):
 
 
 
-
-
-genesis(5,5,5)
+if len(sys.argv) != 4:
+    print("Usage: python3 gen.py <number of rows> <number of columns> <size of each room>")
+    print("Example: python3 gen.py 5 6 8")
+else:
+    genesis(int(sys.argv[1]),int(sys.argv[2]),int(sys.argv[3]))
